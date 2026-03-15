@@ -223,6 +223,11 @@ h2 {
   box-shadow: var(--primary-box-shadow);
 }
 
+/* === Task Modal Dark Background === */
+#task-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
 #task-form {
   display: flex;
   flex-direction: column;
@@ -286,6 +291,9 @@ h2 {
 :is(button, input[type="button"], input[type="submit"]):focus {
   outline: none;
   box-shadow: none;
+}
+.close-btn:hover {
+  color: darkred;
 }
 
 
