@@ -244,6 +244,7 @@ h2 {
   box-sizing: border-box;
 }
 
+/* === Task Form Textarea === */
 #task-form textarea {
   padding: 10px;
   border: 1px solid #e4ebfa;
@@ -254,6 +255,7 @@ h2 {
   resize: none; /* Disable resizing */
 }
 
+/* === Task Form Select === */
 #task-form select {
   padding: 10px;
   border: 1px solid #e4ebfa;
@@ -374,5 +376,10 @@ h2 {
 
   .column-div {
     padding: 24px;
+  }
+
+  #task-form {
+    width: 80vw;
+    height: auto;
   }
 }
