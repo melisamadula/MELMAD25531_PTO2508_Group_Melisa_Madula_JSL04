@@ -253,6 +253,40 @@ h2 {
   cursor: pointer;
 }
 */
+/* === Modal Layout === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  border: none;
+  width: 50vw;
+  height: 50vh;
+}
+
+#task-modal {
+  border: none;
+  border-radius: 6px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  border: none;
+}
+
+/* == Close Button === */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: red;
+}
+
+
 
 /* ========================
    Responsive Styles
