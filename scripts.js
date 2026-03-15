@@ -1,63 +1,32 @@
-/*
-// Starting with connecting the JavaScript files
-import { initialTasks } from "./initialData.js ";
+// Import initial data (assuming initialData.js exports an array)
+import { initialTasks } from "./initialData.js";
 
-// Function to create a task element
-function createTaskElement(task) {
-    const taskElement = document.createElement("div");
-    taskDiv.className = "task-div";
-    taskDiv.textContent = task.title;
-    taskDiv.dataset.taskId = task.id;
+const modal = document.getElementById("task-modal");
+const closeBtn = document.getElementById("close-modal-btn");
+const modalTitle = document.getElementById("task-title");
+const modalDesc = document.getElementById("task-desc");
+const taskStatus = document.getElementById("task-status");
 
-    taskDiv.addEventListener("click", () => {
-        openTaskDetails(task);
+function openTaskModal(taskElement) {
+  modalTitle.value = taskElement.textContent.trim();
+  modalDesc.value = taskElement.dataset.desc || "";
+  const columnStatus = taskElement.closest(".column-div").dataset.status || "";
+  taskStatus.value = columnStatus;
+  modal.showModal();
+}
+
+function setupTaskClicks() {
+  const tasks = document.querySelectorAll(".task-div");
+  for (let i = 0; i < tasks.length; i += 1) {
+    tasks[i].addEventListener("click", function () {
+      openTaskModal(tasks[i]);
     });
-
-    return taskDiv;
-}
-*/
-/*
-// Get the modal
-var modal = document.getElementById("task-modal");
-
-// Get the button that opens the modal
-var form = document.getElementById("task-form");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-btn")[0];
-
-// When the user clicks on the button, open the modal
-form.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
   }
 }
-*/
-/* Commented out
-import { initialTasks } from "./initialData.js"; // Removed extra space
 
-function createTaskElement(task) {
-    // Changed taskDiv to taskElement to match the declaration
-    const taskElement = document.createElement("div");                
-    taskElement.className = "task-div";
-    taskElement.textContent = task.title;
-    taskElement.dataset.taskId = task.id; // Changed taskld to taskId for consistency
+setupTaskClicks();
 
-    taskElement.addEventListener("click", () => {                
-        // Ensure this function is defined elsewhere
-        openTaskDetails(task);                
-    });
-    
-    return taskElement;
-}
-*/
+closeBtn.addEventListener("click", function () {
+  modal.close();
+});
+  
