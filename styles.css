@@ -214,59 +214,53 @@ h2 {
 /*=========================
    Modal Styles
 ========================*/
-/* The Modal (background) */
-/*#task-modal {
-  display: none; /* Hidden by default */
-  /*position: fixed; /* Stay in place */
-  /*z-index: 1; /* Sit on top */
-  /*left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  /*height: 100%; /* Full height */
-  /*overflow: auto; /* Enable scroll if needed */
-  /*background-color: rgb(0,0,0); /* Fallback color */
-  /*background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-/*}
-*/
-/* Modal Content/Box */
-/*#task-form {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
- /* padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-/*}
-*/
 
-/* The Close Button */
-/*.close-btn {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-*/
 /* === Modal Layout === */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 20px 0;
-  border: none;
-  width: 50vw;
-  height: 50vh;
-}
-
 #task-modal {
   border: none;
   border-radius: 6px;
+  background-color: var(--primary-color);
+  box-shadow: var(--primary-box-shadow);
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: none;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* === Task Form Inputs === */
+#task-form input {
+  padding: 10px;
+  border: 1px solid #e4ebfa;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#task-form textarea {
+  padding: 10px;
+  border: 1px solid #e4ebfa;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: none; /* Disable resizing */
+}
+
+#task-form select {
+  padding: 10px;
+  border: 1px solid #e4ebfa;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .modal-header {
@@ -277,7 +271,7 @@ form {
   border: none;
 }
 
-/* == Close Button === */
+/* === Close Button === */
 .close-btn {
   background: none;
   border: none;
